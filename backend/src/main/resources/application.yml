@@ -7,8 +7,19 @@ spring:
     driver-class-name: "${SPRING_DATASOURCE_DRIVER:org.h2.Driver}"
     username: "${DB_USER:sa}"
     password: "${DB_PASSWORD:}"
+  sql:
+    init:
+      # PostgreSQL 由容器初始化脚本建库（见 database/init.sql）；本地默认 H2 使用 classpath 脚本
+      mode: "${SQL_INIT_MODE:embedded}"
+      platform: "${SQL_INIT_PLATFORM:h2}"
   jpa:
     database-platform: "${SPRING_JPA_DATABASE_PLATFORM:org.hibernate.dialect.H2Dialect}"
     hibernate:
       ddl-auto: none
     open-in-view: false
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 10

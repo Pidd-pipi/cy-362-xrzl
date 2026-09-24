@@ -151,6 +151,131 @@ body {
   font-weight: 700;
 }
 
+.session-board {
+  margin-top: 26px;
+}
+
+.panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.panel-head h2 {
+  margin: 0 0 8px;
+}
+
+.panel-head p {
+  margin: 0;
+  color: color-mix(in srgb, #19212e 62%, #3268b8 38%);
+}
+
+.session-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 18px 0;
+}
+
+.session-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.seat-summary {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.seat-progress {
+  flex: 1 1 280px;
+}
+
+.seat-numbers {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.seat-free {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1f7a4d;
+}
+
+.seat-total {
+  color: color-mix(in srgb, #19212e 60%, transparent);
+  font-size: 13px;
+}
+
+.action-row {
+  display: flex;
+  gap: 10px;
+}
+
+.player-input {
+  flex: 1 1 auto;
+}
+
+.board-alert {
+  margin-top: 2px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.info-card,
+.promotion-card {
+  border: 1px solid color-mix(in srgb, #19212e 12%, transparent);
+  border-radius: 8px;
+  padding: 16px;
+  background: color-mix(in srgb, #f4f7fb 70%, white 30%);
+}
+
+.info-card header,
+.promotion-card header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.info-card header span,
+.promotion-card small {
+  color: color-mix(in srgb, #19212e 55%, transparent);
+  font-size: 12px;
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 28px;
+}
+
+.player-tag {
+  font-size: 13px;
+}
+
+.empty-hint {
+  color: color-mix(in srgb, #19212e 45%, transparent);
+  font-size: 13px;
+}
+
+.promotion-note {
+  margin: 0 0 6px;
+  font-weight: 700;
+  color: #b25b1f;
+}
+
 @media (max-width: 860px) {
   .topbar {
     align-items: flex-start;
@@ -158,8 +283,17 @@ body {
   }
 
   .lead-grid,
-  .metric-grid {
+  .metric-grid,
+  .info-grid {
     grid-template-columns: 1fr;
+  }
+
+  .action-row {
+    flex-wrap: wrap;
+  }
+
+  .action-row .el-button {
+    flex: 1 1 120px;
   }
 
   .plain-row {
