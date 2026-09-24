@@ -30,3 +30,43 @@ export interface OverviewResponse {
   kpis: KpiItem[];
   records: OperationRecord[];
 }
+
+export interface PlayerView {
+  playerName: string;
+}
+
+export interface WaitingPlayerView {
+  playerName: string;
+  position: number;
+  aheadCount: number;
+}
+
+export interface SessionView {
+  id: number;
+  title: string;
+  scriptName: string;
+  dmName: string;
+  startTime: string;
+  capacity: number;
+  seatedCount: number;
+  remainingSeats: number;
+  waitingCount: number;
+  lastEvent: string;
+  seatedPlayers: PlayerView[];
+  waitingPlayers: WaitingPlayerView[];
+}
+
+export interface RegisterResponse {
+  success: boolean;
+  status: "SEATED" | "WAITING";
+  message: string;
+  aheadCount: number;
+  session: SessionView;
+}
+
+export interface CancelResponse {
+  success: boolean;
+  message: string;
+  promotedPlayer: string | null;
+  session: SessionView;
+}
